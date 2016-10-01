@@ -49,6 +49,11 @@ public class TouchInput : MonoBehaviour
 				index++;
 			}
 
+		if (index != 2)
+		{
+			m_LastTouchDistance = -1;
+		}
+
 		float distance = Vector2.Distance(touch_pos[0], touch_pos[1]);
 		if (m_LastTouchDistance < 0)
 		{
