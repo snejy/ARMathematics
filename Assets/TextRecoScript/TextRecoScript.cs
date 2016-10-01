@@ -11,15 +11,18 @@ public class TextRecoScript : MonoBehaviour, ITextRecoEventHandler {
     {
      
     }
+    private bool initialized = false;
 
   public void OnWordDetected(WordResult word)
     {
-        if (word.Word.StringValue == "Water" || word.Word.StringValue == "water")
-        { 
+        if (word.Word.StringValue == "Water" || word.Word.StringValue == "water" && !initialized)
+        {
+            initialized = true;
             GameObject water = Instantiate(prefab);
             water.transform.position = new Vector3(0.5F, 0.5F, 0.5F); 
             water.transform.localScale = new Vector3(50, 50, 50);
             water.transform.parent = GameObject.FindWithTag("Target").transform;
+
         }
         Debug.Log("Currently tracked word: " + word.Word.StringValue);
     }
