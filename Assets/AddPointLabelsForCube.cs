@@ -10,7 +10,7 @@ public class NewBehaviourScript : MonoBehaviour {
 		Mesh mesh = GetComponent<MeshFilter>().mesh;
         Vector3[] vertices = mesh.vertices;
         GameObject g = GameObject.Find("Cube");
-
+        Debug.Log(vertices.Length);
         for(int i=0; i<8; i++) {
         	Vector3 vec = vertices[i];
 	        TextMesh mh = g.GetComponentInChildren<TextMesh>();
