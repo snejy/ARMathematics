@@ -14,7 +14,7 @@ public class TextRecoScript : MonoBehaviour, ITextRecoEventHandler {
 
   public void OnWordDetected(WordResult word)
     {
-        if (word.Word.StringValue == "Network" || word.Word.StringValue == "network")
+        if (word.Word.StringValue == "Water" || word.Word.StringValue == "water")
         { 
             GameObject water = Instantiate(prefab);
             water.transform.position = new Vector3(0.5F, 0.5F, 0.5F); 
