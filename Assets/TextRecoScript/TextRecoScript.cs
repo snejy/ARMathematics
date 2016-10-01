@@ -15,7 +15,7 @@ public class TextRecoScript : MonoBehaviour, ITextRecoEventHandler {
 
   public void OnWordDetected(WordResult word)
     {
-        if (word.Word.StringValue == "Water" || word.Word.StringValue == "water" && !initialized)
+        if (word.Word.StringValue.ToLower().Equals("water")  && !initialized)
         {
             initialized = true;
             GameObject water = Instantiate(prefab);
