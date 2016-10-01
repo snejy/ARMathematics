@@ -10,13 +10,14 @@ public class TouchInput : MonoBehaviour
 	public float ZoomMin = 0.05f;
 	public float ZoomMax = 0.5f;
 
-	public Transform arCameraTransform;
+	private Transform arCameraTransform;
 	private float m_LastTouchDistance = -1;
 
 	// Use this for initialization
 	void Start ()
 	{
-		
+        arCameraTransform = GameObject.FindGameObjectWithTag("ARCamera").transform;
+        Debug.Log("Ar camera is : " + arCameraTransform == null);
 	}
 
 	// Update is called once per frame

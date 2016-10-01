@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
   <Tracking>
+    <ImageTarget name="stones" size="200.000000 140.000000" />
+    <ImageTarget name="network" size="200.000000 266.666656" />
     <ImageTarget name="Hack" size="200.000000 112.130180" />
-    <ImageTarget name="ozzy1" size="1011.000000 1015.000000" />
-    <ImageTarget name="ozzy3" size="1011.000000 1005.777893" />
-    <ImageTarget name="ozzy2" size="1011.000000 888.082092" />
-    <ImageTarget name="ozzy" size="711.000000 538.000000" />
     <ImageTarget name="first" size="1500.000000 1004.132202" />
     <CylinderTarget name="zipfer" sideLength="11.000000"/>
   </Tracking>
