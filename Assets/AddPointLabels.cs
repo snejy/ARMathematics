@@ -19,7 +19,7 @@ public class AddPointLabels : MonoBehaviour {
 			tm.color = Color.black;
 			tm.transform.localPosition = new Vector3(vec.x, vec.y, vec.z);
 	  		tm.characterSize = 4F;
-	  		tm.fontSize = 10;
+	  		tm.fontSize = 90;
         }
     }	
 	
