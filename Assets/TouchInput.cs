@@ -12,6 +12,7 @@ public class TouchInput : MonoBehaviour
 
 	private Transform arCameraTransform;
 	private float m_LastTouchDistance = -1;
+	private bool m_ZoomStopped = true;
 
 	// Use this for initialization
 	void Start ()
@@ -33,6 +34,10 @@ public class TouchInput : MonoBehaviour
 
 		int touch_count = Input.touchCount;
 
+		if (!m_ZoomStopped && touch_count == 0)
+			m_ZoomStopped = true;
+
+
 		if (touch_count <= 1 || touch_count > 2)
 		{
 			m_LastTouchDistance = -1.0f;
@@ -50,10 +55,13 @@ public class TouchInput : MonoBehaviour
 				index++;
 			}
 
+
 		if (index != 2)
 		{
 			m_LastTouchDistance = -1;
 		}
+
+		m_ZoomStopped = false;
 
 		float distance = Vector2.Distance(touch_pos[0], touch_pos[1]);
 		if (m_LastTouchDistance < 0)
@@ -90,6 +98,9 @@ public class TouchInput : MonoBehaviour
 
 	private void Zoom(float distance)
 	{
+		if (!m_ZoomStopped)
+			return;
+
 		float scale = distance * ZoomSpeed + transform.localScale.x;
 		scale = Mathf.Clamp(scale, ZoomMin , ZoomMax);
 
